@@ -1,0 +1,98 @@
+├── Brain Tumor CT scan Images
+│   ├── CT image source.txt
+│   ├── Healthy
+│   │    └──  2300 files
+│   └── Tumor
+│        └──  2318 files 
+└── Brain Tumor MRI images
+    ├── Healthy
+    │    └──  2000 files
+    ├── MRI image source.txt
+    └── Tumor
+         └──  3000 files
+               ├── glioma       672 files
+               ├── meningioma   1112 files
+               ├── pituitary    629 files
+               └── tumor        587 files 
+
+
+
+
+
+
+ejemplos
+
+
+/home/maxkaizo/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Healthy
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Healthy$ ls -1 | head
+ct_healthy (1).jpg
+ct_healthy (1).png
+ct_healthy (10).jpg
+ct_healthy (10).png
+ct_healthy (100).jpg
+ct_healthy (100).png
+ct_healthy (1000).jpg
+ct_healthy (1001).jpg
+ct_healthy (1002).jpg
+ct_healthy (1003).jpg
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Healthy$ ls -1 | tail
+ct_healthy (990).jpg
+ct_healthy (991).jpg
+ct_healthy (992).jpg
+ct_healthy (993).jpg
+ct_healthy (994).jpg
+ct_healthy (995).jpg
+ct_healthy (996).jpg
+ct_healthy (997).jpg
+ct_healthy (998).jpg
+ct_healthy (999).jpg
+
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Tumor$ pwd
+/home/maxkaizo/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Tumor
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Tumor$ ls -1 | head
+ct_tumor (1).jpg
+ct_tumor (1).png
+ct_tumor (10).jpg
+ct_tumor (10).png
+ct_tumor (100).jpg
+ct_tumor (100).png
+ct_tumor (1000).jpg
+ct_tumor (1001).jpg
+ct_tumor (1002).jpg
+ct_tumor (1003).jpg
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor CT scan Images/Tumor$ ls -1 | tail
+ct_tumor (990).jpg
+ct_tumor (991).jpg
+ct_tumor (992).jpg
+ct_tumor (993).jpg
+ct_tumor (994).jpg
+ct_tumor (995).jpg
+ct_tumor (996).jpg
+ct_tumor (997).jpg
+ct_tumor (998).jpg
+ct_tumor (999).jpg
+
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor MRI images/Healthy$ ls -1 | head
+mri_healthy (1).jpeg
+mri_healthy (1).jpg
+mri_healthy (10).jpg
+mri_healthy (100).jpg
+mri_healthy (1000).jpg
+mri_healthy (1001).jpg
+mri_healthy (1002).jpg
+mri_healthy (1003).jpg
+mri_healthy (1004).jpg
+mri_healthy (1005).jpg
+
+maxkaizo@max:~/mlzoomcamp_cp1/Dataset/Brain Tumor MRI images/Healthy$ ls -1 | tail
+mri_healthy (990).jpg
+mri_healthy (991).jpg
+mri_healthy (992).jpg
+mri_healthy (993).jpg
+mri_healthy (994).jpg
+mri_healthy (995).jpg
+mri_healthy (996).jpg
+mri_healthy (997).jpg
+mri_healthy (998).jpg
+mri_healthy (999).jpg
+
