@@ -5,3 +5,8 @@ desde identificar como vienen acomodados, que tipo de imagenes son, cuantos arch
 si son tomas laterales o superiores
 
 reacomodarlos por carpeta para cada clase
+
+
+
+- hay que ajustar al mismo tamaño para que sea más fácil para el modelo
+- hay que manejar las imágenes en blanco y negro
