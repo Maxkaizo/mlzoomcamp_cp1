@@ -10,7 +10,7 @@ Brain cancer is one of the most critical and life-threatening medical conditions
 This project aims to address the challenge of automating brain tumor detection and classification by developing a deep learning-based solution. The objective is to create a system capable of accurately identifying brain tumors from multimodal imaging data (CT and MRI scans) and classifying them into specific tumor types. By integrating cutting-edge Machine Learning and Deep Learning techniques, the project seeks to enhance diagnostic accuracy and efficiency, ultimately aiding healthcare professionals in decision-making processes.
 
 # Domain Context
-If you need (as I did) some context regarding the referred medical procedures, what is a CT Scan and an MRI, I'm including some definitions [here]()
+If you need (as I did) some context regarding the referred medical procedures, what is a CT Scan and an MRI, I'm including some definitions [here](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/references/Domain_Context.md)
 
 # Dataset 
 I'll use the [Brain tumor multimodal image (CT & MRI)](https://www.kaggle.com/datasets/murtozalikhon/brain-tumor-multimodal-image-ct-and-mri/code) dataset from kaggle wich includes a collection of scans included in several sources, as stated in its description "the dataset includes high-resolution CT and MRI images captured from multiple patients, with each image labeled with the corresponding tumor type (e.g., glioma, meningioma, etc.) and its location within the brain. This combination of CT and MRI images aims to leverage the strengths of both imaging techniques: CT scans for clear bone structure visualization and MRI for soft tissue details, enabling a more accurate analysis of brain tumors".
