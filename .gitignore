@@ -1,5 +1,5 @@
 Dataset/
-brain-tumor-multimodal-image-ct-and-mri.zip
+raw_data/
 xception_v*
 model_v1.weights.h5
 test_gpu.ipynb
