@@ -1,5 +1,5 @@
 # Brain Cancer Detection with Deep Learning
-
+![Banner](image.png)
 # Introduction
 
 This repository contains the implementation of a machine learning model designed to detect brain cancer using CT and MRI images. This project is part of the final capstone for the Machine Learning Zoomcamp course offered by DataTalksClub.
