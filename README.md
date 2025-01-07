@@ -62,3 +62,4 @@ This rich combination of imaging modalities offers a unique opportunity to devel
 
 Probar entrenando de cero el modelo
 probar usando un modelo de dominio especifico en el ambito médico
+- Test the model further with a holdout dataset or through cross-validation to ensure robust performance.
