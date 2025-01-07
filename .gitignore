@@ -3,3 +3,4 @@ raw_data/
 xception_*
 model_v1.weights.h5
 test_gpu.ipynb
+tmp/
