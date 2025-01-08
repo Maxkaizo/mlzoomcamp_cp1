@@ -20,7 +20,7 @@ So, the model will consists of three main components:
 
 In the serving phase, the input will be an image, and the output will represent the probabilities of the image belonging to each class.
 
-# Repository Structure
+# Repository Structure.
 
     mlzoomcamp_cp1/
     |-- Dataset/             # Dataset (train, test and validation splits)
