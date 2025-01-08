@@ -40,3 +40,6 @@ def lambda_handler(event, context):
     url = event['url']
     result = predict(url)
     return result
+
+# result = predict(url)
+# print(result)
