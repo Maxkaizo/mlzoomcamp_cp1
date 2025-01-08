@@ -77,7 +77,8 @@ docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
 
 ## Cloud Test
 
-To test on the cloud deployment, you can use this script (also located on [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment) folder)
+To test on the cloud deployment, you can use this script [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment).
+Please contact me and I'll send you an API KEY
 
 ```
 import requests
@@ -97,6 +98,14 @@ result = requests.post(url, json=data, headers=headers).json()
 
 print(result)
 ```
+The test should look like this
+![alt text](image-3.png)
+
+And here's an example of the lambda output
+
+![alt text](image-2.png)
+
+
 
 # Potential Improvements:
 
