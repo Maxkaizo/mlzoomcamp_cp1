@@ -33,6 +33,8 @@ def predict(url):
 
     float_predictions = preds[0].tolist()
 
+    float_predictions = [round(float(pred), 6) for pred in preds[0]]
+
     return dict(zip(classes, float_predictions))
 
 
