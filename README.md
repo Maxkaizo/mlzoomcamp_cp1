@@ -24,11 +24,16 @@ In the serving phase, the input will be an image, and the output will represent 
 
     mlzoomcamp_cp1/
     |-- Dataset/             # Dataset (train, test and validation splits)
-    |-- notebooks.ipynb      # Data preparation, EDA, Model Selection, and Parameter Tuning
-    |-- references/          # Relevant contextual information
+    |-- deployment/          # Files required for replication and deployment (Dockerfile and testing scripts)
     |-- models/              # Saved models and weights
+    |-- references/          # Relevant contextual information adn bibliography
+    |-- notebook.ipynb       # Data preparation, EDA, Model Selection, and Parameter Tuning
     |-- README.md            # Project overview
-    |-- requirements.txt     # Dependencies         ***** placeholder ******
+    |-- train.ipynb          # Final model training
+
+- The preprocessing, EDA and model trainning phase is documented in the [notebook.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/notebook.ipynb) file.
+- You can find an example of the model usage with the standard tensorflow library here [use_model.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/use_model.ipynb)
+- And an alternate version with ´tflite_runtime´ and ´keras_image_helper´ here [use_litemodel.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/use_litemodel.ipynb) 
 
 # Domain Context
 If you need (as I did) some context regarding the referred medical procedures, what is a CT Scan and an MRI, I'm including some definitions [here](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/references/Domain_Context.md)
