@@ -33,35 +33,34 @@ In the serving phase, the input will be an image, and the output will represent 
 
 - The preprocessing, EDA and model trainning phase is documented in the [notebook.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/notebook.ipynb) file.
 - You can find an example of the model usage with the standard tensorflow library here [use_model.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/use_model.ipynb)
-- And an alternate version with ´tflite_runtime´ and ´keras_image_helper´ here [use_litemodel.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/use_litemodel.ipynb) 
+- And an alternate version with `tflite_runtime` and `keras_image_helper` here [use_litemodel.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/use_litemodel.ipynb)
+- If you want to test it, check the [Deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main?tab=readme-ov-file#deployment) section
+- During the exploration process I've saved the model several times using the keras' `ModelCheckpoint()` class, and you also can see an example of how to convert a model to a tensoflow lite version in [convert_model.ipynb](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/convert_model.ipynb)
 
 # Domain Context
 If you need (as I did) some context regarding the referred medical procedures, what is a CT Scan and an MRI, I'm including some definitions [here](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/references/Domain_Context.md)
 
 # Dataset
-For this project, I will use the [Brain Tumor Multimodal Image (CT & MRI) dataset](https://www.kaggle.com/api/v1/datasets/download/murtozalikhon/brain-tumor-multimodal-image-ct-and-mri) from Kaggle. This dataset includes a collection of scans sourced from multiple patients. According to its description:
+For this project, I've used the [Brain Tumor Multimodal Image (CT & MRI) dataset](https://www.kaggle.com/api/v1/datasets/download/murtozalikhon/brain-tumor-multimodal-image-ct-and-mri) from Kaggle. This dataset includes a collection of scans sourced from multiple patients. According to its description:
 
     "The dataset includes high-resolution CT and MRI images captured from multiple patients, with each image labeled with the corresponding tumor type (e.g., glioma, meningioma, etc.) and its location within the brain. This combination of CT and MRI images aims to leverage the strengths of both imaging techniques: CT scans for clear bone structure visualization and MRI for soft tissue details, enabling a more accurate analysis of brain tumors."
 
-This rich combination of imaging modalities offers a unique opportunity to develop a robust machine learning model that can effectively utilize the complementary strengths of CT and MRI scans.
-
-# Script train.py (suggested name)
-- Training the final model
-- Saving it to a file (e.g. pickle) or saving it with specialized software (BentoML)
-
-# Script predict.py (suggested name)
-- Loading the model
-- Serving it via a web service (with Flask or specialized software - BentoML, KServe, etc)
-
-# Files with dependencies
-- Pipenv and Pipenv.lock if you use Pipenv
-- or equivalents: conda environment file, requirements.txt or pyproject.toml
-
-# Dockerfile for running the service
-
 # Deployment
+
+## Locally
+
+To test the the model locally, follow this instructions:
+
+1. Clone this repository
+
+```
+
+```
+
 - URL to the service you deployed or
 - Video or image of how you interact with the deployed service
+
+## Cloud Test
 
 # Potential Improvements:
 
