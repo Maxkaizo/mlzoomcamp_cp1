@@ -10,6 +10,8 @@ RUN pip install https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tfl
 WORKDIR /app
 
 COPY bcd_xception.tflite /app/
+COPY lambda_function.py /app/
+
 
 # Comando por defecto
 CMD ["python"]
