@@ -78,7 +78,7 @@ docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
 ## Cloud Test
 
 To test on the cloud deployment, you can use this script [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment).
-Please contact me and I'll send you an API KEY
+Please contact me through slack @Maxkaizo or email pptmtz@gmail.com and I'll send you an API KEY
 
 ```
 import requests
@@ -105,10 +105,8 @@ And here's an example of the lambda output
 
 ![alt text](image-2.png)
 
+# Potential Improvements (To Do's)
 
-
-# Potential Improvements:
-
-Probar entrenando de cero el modelo
-probar usando un modelo de dominio especifico en el ambito médico
-- Test the model further with a holdout dataset or through cross-validation to ensure robust performance.
+- Train a model from 0 and check performance
+- Use another pretrained model like DenseNet
+- USe Vision Transformers and check performance
