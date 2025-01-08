@@ -1,6 +1,6 @@
 Dataset/
-raw_data/
 xception_*
+raw_data/
 model_v1.weights.h5
 test_gpu.ipynb
 tmp/

@@ -26,6 +26,7 @@ In the serving phase, the input will be an image, and the output will represent 
     |-- Dataset/             # Dataset (train, test and validation splits)
     |-- deployment/          # Files required for replication and deployment (Dockerfile and testing scripts)
     |-- models/              # Saved models and weights
+    |-- raw_data/            # A copy of the dataset+
     |-- references/          # Relevant contextual information adn bibliography
     |-- notebook.ipynb       # Data preparation, EDA, Model Selection, and Parameter Tuning
     |-- README.md            # Project overview
@@ -45,22 +46,37 @@ For this project, I've used the [Brain Tumor Multimodal Image (CT & MRI) dataset
 
     "The dataset includes high-resolution CT and MRI images captured from multiple patients, with each image labeled with the corresponding tumor type (e.g., glioma, meningioma, etc.) and its location within the brain. This combination of CT and MRI images aims to leverage the strengths of both imaging techniques: CT scans for clear bone structure visualization and MRI for soft tissue details, enabling a more accurate analysis of brain tumors."
 
+You can find a copy of the raw dataset in [raw_data](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/8a298f32f35f449b274b5cd76f47d375ca4abcc9/raw_data) folder
+
 # Deployment
 
 ## Locally
 
-To test the the model locally, follow this instructions:
+To test the the model locally , follow this instructions:
 
 1. Clone this repository
 
 ```
+git clone https://github.com/Maxkaizo/mlzoomcamp_cp1.git
+```
+2. Move to the deployment folder
 
 ```
+cd mlzoomcamp_cp1/deployment
+```
+3. Build a docker image
 
-- URL to the service you deployed or
-- Video or image of how you interact with the deployed service
+```
+docker build -t bcd_mlzoomcamp .
+```
+4. Run the docker image
+
+```
+docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
+```
 
 ## Cloud Test
+
 
 # Potential Improvements:
 
