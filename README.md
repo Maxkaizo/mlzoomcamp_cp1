@@ -7,7 +7,9 @@ This repository contains the implementation of a machine learning model designed
 # Objective (Value Proposition)
 Brain cancer diagnosis is a critical medical task that typically requires expert analysis of imaging data. This project leverages machine learning techniques to assist in the detection of brain cancer from CT and MRI scans. The primary goal is to develop an accurate and efficient model that can identify cancerous images, offering a proof-of-concept for practical medical applications.
 
-# Problem Definition (From a ML Perspective)
+# From a ML Perspective
+
+## Problem Definition
 This project is framed as a Multiclass Classification Problem. The objective is to determine whether a patient's CT scan or MRI indicates the presence of a tumor. Additionally, for MRI scans, the model aims to classify the type of tumor when applicable.
 
 To achieve this, I will build a model based on a Convolutional Neural Network (CNN) and employ the transfer learning technique. Specifically, I will utilize the Xception model, which has been pre-trained on the ImageNet dataset. By leveraging Xception's feature extraction capabilities, I can fine-tune the model using the dataset's images to optimize it for this task.
@@ -19,6 +21,24 @@ So, the model will consists of three main components:
 3. And a probabilistic classifier with a softmax activation to output the probabilities for each class in the multiclass classification task. 
 
 In the serving phase, the input will be an image, and the output will represent the probabilities of the image belonging to each class.
+
+## Evaluation Definition
+
+Finally, to determine the evaluation metrics we will focus on, we need to analyze the potential implications of incorrect predictions in the context of cancer detection. The goal is to ensure that the model provides meaningful support to medical decision-making while minimizing potential adverse effects.
+
+In cases where a cancerous tumor is not detected (false negative), the consequences could be critical, as it may lead to delayed diagnosis and treatment, reducing the patient’s chances of recovery. Therefore, minimizing this condition will be our highest priority. The metric associated with this situation is Recall.
+
+On the other hand, in cases where a healthy patient is mistakenly identified as having cancer (false positive), the impact is less severe but still significant. This misclassification may lead to unnecessary stress for the patient and additional diagnostic procedures, which can incur financial and psychological costs. The metric tied to this scenario is Precision, to which we will assign moderate priority.
+
+Additionally, we will rely on ROC-AUC as a comprehensive measure to evaluate the model's ability to distinguish between cancerous and non-cancerous cases, ensuring robust performance across different threshold levels.
+
+## Summary
+With these considerations, the problem is described as follows:
+
+- Problem Type:             Multiclass Classification
+- Learning Type:            Supervised
+- Evaluation Metrics:       Recall (High priority), Precision (Moderate Priority), and ROC-AUC (support).
+- Architecture              Deep Learning – Convolutional Neural Network with Transfer Learning
 
 # Repository Structure.
 
@@ -49,8 +69,11 @@ For this project, I've used the [Brain Tumor Multimodal Image (CT & MRI) dataset
 You can find a copy of the raw dataset in [raw_data](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/8a298f32f35f449b274b5cd76f47d375ca4abcc9/raw_data) folder
 
 # Deployment
+In this project, I will implement the service as a Docker container (available in [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment)), and subsequently deploy it as a Lambda function on AWS.
 
-## Locally
+## Testing the service
+
+### Locally
 
 To test the the model locally , follow this instructions:
 
@@ -75,7 +98,7 @@ docker build -t bcd_mlzoomcamp .
 docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
 ```
 
-## Cloud Test
+### Cloud Test
 
 To test on the cloud deployment, you can use this script [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment).
 Please contact me through slack @Maxkaizo or email pptmtz@gmail.com and I'll send you an API KEY
@@ -107,6 +130,7 @@ And here's an example of the lambda output
 
 # Potential Improvements (To Do's)
 
+- Apply early stopping
 - Train a model from 0 and check performance
 - Use another pretrained model like DenseNet
 - USe Vision Transformers and check performance
