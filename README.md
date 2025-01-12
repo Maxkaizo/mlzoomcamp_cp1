@@ -75,7 +75,8 @@ A detailed guide to replicate the deployment can be found in the readme file in 
 
 ### Cloud Test
 
-To test on the cloud deployment, you can use this script [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment).
+To test on the cloud deployment, you can use this script [cloud_test.py](https://github.com/Maxkaizo/mlzoomcamp_cp1/blob/main/deployment/cloud_test.py).
+
 Please contact me through slack @Maxkaizo or email pptmtz@gmail.com and I'll send you an API KEY
 
 ```

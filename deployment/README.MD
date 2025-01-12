@@ -2,49 +2,55 @@
 
 ## Introduction
 
-The architecture consists of two main components:
+The deployment consists of two main components:
 
 - Local Environment: A Docker container that packages the model and necessary scripts, allowing local testing before cloud deployment.
+
 - Cloud Environment: The service is deployed on AWS Lambda using Amazon Elastic Container Registry (ECR) as the container repository and API Gateway for external access.
 
-Solution Architecture
+### Solution Architecture
 
-Base Image: This solution uses a pre-configured base image provided by Amazon for Lambda functions. The base image simplifies the deployment by including necessary scripts and configurations to handle Lambda's runtime requirements.
+- Base Image: This solution uses a pre-configured base image provided by Amazon for Lambda functions. The base image simplifies the deployment by including necessary scripts and configurations to handle Lambda's runtime requirements.
 
 Official documentation for Lambda base images: [AWS Lambda Python Base Image](https://gallery.ecr.aws/lambda/python)
 
-Model: The machine learning model (bcd_xception.tflite) is optimized for TensorFlow Lite and packaged within the container.
-API Gateway: Exposes the Lambda function as a RESTful endpoint, enabling external HTTP requests.
+- Model: The machine learning model `bcd_xception.tflite` is optimized for TensorFlow Lite and packaged within the container.
 
-Security: API requests are authenticated using an API key.
+- API Gateway: Exposes the Lambda function as a RESTful endpoint, enabling external HTTP requests.
+
+- Security: API requests are authenticated using an API key.
 
 ## Deployment
 
 This project supports both local and cloud deployment. Each includes instructions for setup and testing.
 
 ### 1. Local Deployment
-Setup Instructions
-Clone the repository:
-bash
-Copiar código
+
+**Setup Instructions**
+
+1. Clone the repository:
+```
 git clone https://github.com/Maxkaizo/mlzoomcamp_cp1.git
-Navigate to the deployment folder:
-bash
-Copiar código
+```
+
+2. Navigate to the deployment folder:
+```
 cd mlzoomcamp_cp1/deployment
-Build the Docker image:
-bash
-Copiar código
+```
+3. Build the Docker image:
+```
 docker build -t bcd_mlzoomcamp .
-Run the Docker container:
-bash
-Copiar código
+```
+4. Run the Docker container:
+```
 docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
-Local Testing
+```
+
+**Local Testing**
+
 Once the container is running, send a POST request to http://localhost:8080/2015-03-31/functions/function/invocations to test the service. Use the following Python script:
 
-python
-Copiar código
+``` python
 import requests
 
 url = 'http://localhost:8080/2015-03-31/functions/function/invocations'
@@ -54,19 +60,22 @@ data = {'url': 'https://raw.githubusercontent.com/Maxkaizo/mlzoomcamp_cp1/8a298f
 result = requests.post(url, json=data).json()
 
 print(result)
-2. Cloud Deployment
-Setup Instructions
-Create an ECR Repository
+```
+
+### 2. Cloud Deployment
+
+**Setup Instructions**
+1. Create an ECR Repository
 
 Run the following command to create an Amazon ECR repository where the Docker image will be stored:
 
-bash
-Copiar código
+```
 aws ecr create-repository --repository-name bcd_cp_repo
+```
+
 Example output:
 
-json
-Copiar código
+```json
 {
     "repository": {
         "repositoryArn": "arn:aws:ecr:us-east-1:123456789012:repository/bcd_cp_repo",
@@ -83,42 +92,46 @@ Copiar código
         }
     }
 }
-Log in to Amazon ECR
+```
+
+2. Log in to Amazon ECR
 
 Authenticate Docker to interact with your ECR repository. Replace the region and account ID with your details:
 
-bash
-Copiar código
+```bash
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
+```
 Example output:
 
-Copiar código
+```
 Login Succeeded
-Push the Docker Image to ECR
+```
+3. Push the Docker Image to ECR
 
-Tag the Docker image:
-bash
-Copiar código
+- Tag the Docker image:
+```
 docker tag bcd_mlzoomcamp:latest 123456789012.dkr.ecr.us-east-1.amazonaws.com/bcd_cp_repo:brain_cancer_model-exception-v1
-Push the image to ECR:
-bash
-Copiar código
+```
+- Push the image to ECR:
+```
 docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/bcd_cp_repo:brain_cancer_model-exception-v1
-Deploy the Docker Image to Lambda
+```
+4. Deploy the Docker Image to Lambda
 
-Create a new Lambda function.
-Select Container Image as the deployment type.
-Use the image URI from ECR to configure the Lambda function.
-Configure an API Gateway
+- Create a new Lambda function.
+- Select Container Image as the deployment type.
+- Use the image URI from ECR to configure the Lambda function.
 
-Create an HTTP API Gateway.
-Link it to the Lambda function.
-Generate an API key to secure the endpoint.
-Cloud Testing
+5. Configure an API Gateway
+
+- Create an HTTP API Gateway.
+- Link it to the Lambda function.
+- Generate an API key to secure the endpoint.
+
+#### Cloud Testing
 Use the following Python script to test the deployed service on AWS:
 
-python
-Copiar código
+```python
 import requests
 
 # API Gateway endpoint
@@ -139,34 +152,5 @@ headers = {
 result = requests.post(url, json=data, headers=headers).json()
 
 print(result)
-
-
+```
 Note: Replace API_KEY_HERE with the actual API key. Contact me via Slack (@Maxkaizo) or email (pptmtz@gmail.com) to obtain the API key.
-
-
-## Testing the service
-
-### Locally
-
-To test the the model locally , follow this instructions:
-
-1. Clone this repository
-
-```
-git clone https://github.com/Maxkaizo/mlzoomcamp_cp1.git
-```
-2. Move to the deployment folder
-
-```
-cd mlzoomcamp_cp1/deployment
-```
-3. Build a docker image
-
-```
-docker build -t bcd_mlzoomcamp .
-```
-4. Run the docker image
-
-```
-docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
-```
