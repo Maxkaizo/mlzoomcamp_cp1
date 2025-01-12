@@ -79,7 +79,7 @@ To test on the cloud deployment, you can use this script [cloud_test.py](https:/
 
 Please contact me through slack @Maxkaizo or email pptmtz@gmail.com and I'll send you an API KEY
 
-```
+```python
 import requests
 
 url = 'https://wx2naanqv2.execute-api.us-east-1.amazonaws.com/test_stage/detect'
