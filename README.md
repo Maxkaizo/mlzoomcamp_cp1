@@ -69,34 +69,9 @@ For this project, I've used the [Brain Tumor Multimodal Image (CT & MRI) dataset
 You can find a copy of the raw dataset in [raw_data](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/8a298f32f35f449b274b5cd76f47d375ca4abcc9/raw_data) folder
 
 # Deployment
-In this project, I will implement the service as a Docker container (available in [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment)), and subsequently deploy it as a Lambda function on AWS.
+In this project, I will implement the service as a Docker container (available in [deployment](https://github.com/Maxkaizo/mlzoomcamp_cp1/tree/main/deployment)), and subsequently deploy it as a Lambda function on AWS. 
 
-## Testing the service
-
-### Locally
-
-To test the the model locally , follow this instructions:
-
-1. Clone this repository
-
-```
-git clone https://github.com/Maxkaizo/mlzoomcamp_cp1.git
-```
-2. Move to the deployment folder
-
-```
-cd mlzoomcamp_cp1/deployment
-```
-3. Build a docker image
-
-```
-docker build -t bcd_mlzoomcamp .
-```
-4. Run the docker image
-
-```
-docker run -it --rm -p 8080:8080 bcd_mlzoomcamp
-```
+A detailed guide to replicate the deployment can be found in the readme file in the deployment section
 
 ### Cloud Test
 
